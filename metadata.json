@@ -1,0 +1,6 @@
+{
+  "name": "Invitaciones Digitales Interactivas",
+  "description": "Landing page de conversión para invitaciones de boda, XV años y cumpleaños interactivas",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
