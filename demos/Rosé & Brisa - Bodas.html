@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camila & Julián | Nuestra Boda</title>
+    
+    <!-- Google Fonts: Playfair Display (editorial serif) & Plus Jakarta Sans (clean, rich sans-serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS Script CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        marfil: '#FDFBF7',  // Marfil Orgánico
+                        crema: '#F7F4EE',   // Crema Suave
+                        oro: '#D4AF37',     // Oro Viejo
+                        rose: '#A84660',     // Rosa Rosé/Malbec
+                        carbon: '#2B2D42',   // Gris Carbón
+                        muted: '#7E8194'     // Muted tone
+                    },
+                    fontFamily: {
+                        display: ['"Playfair Display"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        :root {
+            --color-marfil: #FDFBF7;
+            --color-crema: #F7F4EE;
+            --color-oro: #D4AF37;
+            --color-rose: #A84660;
+            --color-carbon: #2B2D42;
+        }
+
+        body {
+            background-color: var(--color-marfil);
+            color: var(--color-carbon);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Ambient phone frame representation for premium layout precision */
+        .app-container {
+            width: 100%;
+            max-width: 480px;
+            background-color: var(--color-marfil);
+            min-height: 100vh;
+            box-shadow: 0 25px 60px -15px rgba(43, 45, 66, 0.08);
+            border-left: 1px solid rgba(212, 175, 55, 0.15);
+            border-right: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        /* Senior CSS Rule: Automatically hide images that fail to load or are empty */
+        img:not([src]), img[src=""], img[src=" "], img[src="null"] {
+            display: none !important;
+        }
+
+        /* Pure CSS active transitions & micro-interactions */
+        .btn-scale-hover {
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .btn-scale-hover:hover {
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body class="flex justify-center min-h-screen">
+
+    <!-- 1. SISTEMA DE PRECARGA REPARADO -->
+    <div id="loader" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#FDFBF7] transition-opacity duration-700">
+        <div class="text-center p-6 space-y-5 max-w-xs">
+            <div class="w-10 h-10 rounded-full border-3 border-rose border-t-transparent animate-spin mx-auto"></div>
+            <div class="space-y-2">
+                <h2 class="font-display text-2xl font-bold tracking-wide text-rose">Camila & Julián</h2>
+                <p class="font-sans text-[10px] uppercase tracking-[0.25em] text-carbon/60 font-semibold">Acreditando acceso VIP...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- The root viewport container -->
+    <div class="w-full flex justify-center">
+        <div class="app-container relative flex flex-col pb-16">
+            
+            <!-- Soft Ambient Background Glow Ornaments style -->
+            <div class="absolute top-[15vh] left-[-30px] w-48 h-48 bg-rose/5 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute top-[50vh] right-[-30px] w-48 h-48 bg-oro/5 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute bottom-[20vh] left-[-20px] w-52 h-52 bg-rose/5 rounded-full blur-3xl pointer-events-none"></div>
+
+            <!-- ==============================================
+                 2. PORTADA EDITORIAL (HERO SECTION)
+                 ============================================== -->
+            <header class="relative w-full flex flex-col items-center justify-center p-6 pt-10 pb-8 text-center bg-white/45 border-b border-rose/10 rounded-b-[32px] shadow-sm">
+                
+                <!-- Título conceptual superior -->
+                <div class="text-center mb-6">
+                    <span class="text-[9px] uppercase tracking-[0.4em] font-sans text-rose font-bold block mb-2">AURA INVITACIONES • ROSÉ & BRISA</span>
+                    <div class="h-[2px] w-8 bg-oro/60 mx-auto rounded-full"></div>
+                </div>
+
+                <!-- Tarjeta central de imagen polaroid -->
+                <div class="relative w-[85%] aspect-[3/4] overflow-hidden rounded-[16px] border-[6px] border-white shadow-md bg-crema mb-8 group">
+                    <!-- EDITAR AQUÍ: ENLACE DE LA FOTO REAL DE PORTADA DE LOS NOVIOS -->
+                    <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=800" alt="Camila & Julián" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" referrerpolicy="no-referrer">
+                    
+                    <!-- Decorative hand-crafted overlay text ribbon -->
+                    <div class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-sm py-2.5 px-4 rounded-xl shadow-sm text-center border border-oro/20">
+                        <span class="font-sans text-[10px] uppercase tracking-[0.2em] text-rose font-bold">¡Nos casamos! — 19 . 12 . 2026</span>
+                    </div>
+                </div>
+
+                <!-- MAQUETADO VERTICAL FLUIDO: Distribución limpia usando CSS Flexbox para centrar sin pisar -->
+                <div class="flex flex-col items-center space-y-3.5 w-full">
+                    <p class="font-sans text-[10px] uppercase tracking-[0.25em] text-muted font-bold">Te invitamos a celebrar nuestra boda</p>
+                    <h1 class="font-display text-4xl lg:text-5xl font-bold tracking-tight text-carbon leading-none py-1">Camila & Julián</h1>
+                    <div class="flex items-center justify-center gap-3">
+                        <span class="h-[1px] w-6 bg-oro/45"></span>
+                        <p class="font-sans text-[9px] tracking-[0.2em] text-rose font-bold uppercase">Nuestra Unión Soñada</p>
+                        <span class="h-[1px] w-6 bg-oro/45"></span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Main Body Content -->
+            <div class="px-6 pt-10 space-y-12">
+
+                <!-- ==============================================
+                     3. BIENVENIDA NARRATIVA
+                     ============================================== -->
+                <section class="text-center py-2">
+                    <div class="max-w-xs mx-auto space-y-4">
+                        <p class="font-sans text-[9px] uppercase tracking-[0.3em] text-oro font-bold">NUESTRO COMPROMISO</p>
+                        <p class="font-display text-lg italic text-carbon leading-relaxed">
+                            "El inicio de nuestro para siempre. Los invitamos a celebrar entre la brisa de los viñedos y la magia del atardecer."
+                        </p>
+                        <div class="flex justify-center pt-2">
+                            <span class="text-rose text-base">✨ 🍇 ✨</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ==============================================
+                     4. SECCIÓN CUENTA REGRESIVA (STABLE DOM)
+                     ============================================== -->
+                <section class="p-6 bg-crema border border-oro/15 rounded-[16px] shadow-sm text-center">
+                    <span class="font-sans text-[9px] uppercase tracking-[0.3em] text-rose font-bold block mb-1">CADA INSTANTE CUENTA</span>
+                    <h2 class="font-display text-lg font-bold text-carbon mb-5">Cuenta Regresiva</h2>
+                    
+                    <div class="grid grid-cols-4 gap-2.5 justify-center">
+                        <!-- Days -->
+                        <div class="bg-white border border-oro/20 rounded-xl py-3 flex flex-col items-center justify-center shadow-inner">
+                            <span id="days-val" class="font-display text-2xl font-bold text-carbon leading-none">00</span>
+                            <span class="font-sans text-[8px] uppercase tracking-wider text-muted mt-1.5 font-bold">Días</span>
+                        </div>
+                        <!-- Hours -->
+                        <div class="bg-white border border-oro/20 rounded-xl py-3 flex flex-col items-center justify-center shadow-inner">
+                            <span id="hours-val" class="font-display text-2xl font-bold text-carbon leading-none">00</span>
+                            <span class="font-sans text-[8px] uppercase tracking-wider text-muted mt-1.5 font-bold">Horas</span>
+                        </div>
+                        <!-- Minutes -->
+                        <div class="bg-white border border-oro/20 rounded-xl py-3 flex flex-col items-center justify-center shadow-inner">
+                            <span id="mins-val" class="font-display text-2xl font-bold text-carbon leading-none">00</span>
+                            <span class="font-sans text-[8px] uppercase tracking-wider text-muted mt-1.5 font-bold">Min</span>
+                        </div>
+                        <!-- Seconds -->
+                        <div class="bg-white border border-oro/20 rounded-xl py-3 flex flex-col items-center justify-center shadow-inner">
+                            <span id="secs-val" class="font-display text-2xl font-bold text-rose leading-none">00</span>
+                            <span class="font-sans text-[8px] uppercase tracking-wider text-muted mt-1.5 font-bold">Seg</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Elegant Separator -->
+                <div class="flex items-center justify-center gap-2 py-2">
+                    <span class="h-[1px] w-20 bg-gradient-to-r from-transparent to-oro/30"></span>
+                    <span class="text-oro text-sm">✦ 🕊️ ✦</span>
+                    <span class="h-[1px] w-20 bg-gradient-to-l from-transparent to-oro/30"></span>
+                </div>
+
+                <!-- ==============================================
+                     5. SECCIÓN UBICACIONES (EJE VERTICAL CORREGIDO)
+                     ============================================== -->
+                <section class="space-y-4">
+                    <div class="text-center mb-6">
+                        <span class="font-sans text-[9px] uppercase tracking-[0.3em] text-oro font-bold block mb-1">COORDENADAS DE LA CELEBRACIÓN</span>
+                        <h2 class="font-display text-2xl font-bold text-carbon">¿Dónde nos encontraremos?</h2>
+                    </div>
+
+                    <div class="space-y-6 flex flex-col">
+                        <!-- Ceremonia Religiosa -->
+                        <div class="flex flex-col items-center justify-center text-center bg-crema border border-oro/15 p-6 rounded-[16px] shadow-sm relative overflow-hidden">
+                            <!-- Icono lineal vector centrado justo ARRIBA de las letras -->
+                            <div class="w-12 h-12 rounded-full border border-oro/30 bg-white flex items-center justify-center mb-4 text-rose shadow-sm">
+                                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="8" cy="12" r="4" />
+                                    <circle cx="16" cy="12" r="4" />
+                                </svg>
+                            </div>
+                            
+                            <h3 class="font-display text-lg font-bold text-carbon mb-1">Ceremonia Religiosa</h3>
+                            <p class="font-sans text-[10px] uppercase tracking-[0.15em] text-rose mb-3.5 font-bold">Sábado 19 de Diciembre • 19:30 hs</p>
+                            <p class="font-sans text-xs text-carbon/85 mb-5 max-w-xs leading-relaxed">
+                                <span class="font-bold">Parroquia Nuestra Señora de Loreto</span><br>
+                                <span class="text-[11px] text-muted">Iglesia Catedral, Mendoza</span>
+                            </p>
+                            
+                            <a href="https://share.google/vy2GCVYPLL64T0KUz" 
+                               target="_blank" 
+                               rel="noreferrer" 
+                               class="btn-scale-hover inline-flex items-center justify-center gap-2 border border-rose/35 text-rose bg-white hover:bg-rose hover:text-white px-5 py-2.5 text-[10px] font-bold uppercase tracking-[0.15em] rounded-full shadow-sm">
+                                Ver ubicación en Mapa
+                            </a>
+                        </div>
+
+                        <!-- Celebración & Fiesta -->
+                        <div class="flex flex-col items-center justify-center text-center bg-crema border border-oro/15 p-6 rounded-[16px] shadow-sm relative overflow-hidden">
+                            <!-- Icono lineal vector centrado justo ARRIBA de las letras -->
+                            <div class="w-12 h-12 rounded-full border border-oro/30 bg-white flex items-center justify-center mb-4 text-rose shadow-sm">
+                                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M6 14c0 .8.6 1.4 1.4 1.4V19H6v1h12v-1h-1.4v-3.6c.8 0 1.4-.6 1.4-1.4V4H6v10zM17 5v4h-3V5h3zM7 5h3v4H7V5z" />
+                                </svg>
+                            </div>
+                            
+                            <h3 class="font-display text-lg font-bold text-carbon mb-1">Celebración & Fiesta</h3>
+                            <p class="font-sans text-[10px] uppercase tracking-[0.15em] text-rose mb-3.5 font-bold">Sábado 19 de Diciembre • 21:00 hs</p>
+                            <p class="font-sans text-xs text-carbon/85 mb-5 max-w-xs leading-relaxed">
+                                <span class="font-bold">Finca Terra Oliva - Bodega & Eventos</span><br>
+                                <span class="text-[11px] text-muted">Mendoza, Argentina</span>
+                            </p>
+                            
+                            <a href="https://share.google/Uy071K4fnop69YHJW" 
+                               target="_blank" 
+                               rel="noreferrer" 
+                               class="btn-scale-hover inline-flex items-center justify-center gap-2 border border-rose/35 text-rose bg-white hover:bg-rose hover:text-white px-5 py-2.5 text-[10px] font-bold uppercase tracking-[0.15em] rounded-full shadow-sm">
+                                Ver ubicación en Mapa
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ==============================================
+                     6. SECCIÓN AGENDAR (GOOGLE CALENDAR ACCESIBLE)
+                     ============================================== -->
+                <section>
+                    <div class="bg-crema border border-oro/15 rounded-[16px] p-6 text-center shadow-sm">
+                        <div class="mb-3 text-rose flex justify-center">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.3" viewBox="0 0 24 24">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                                <line x1="16" y1="2" x2="16" y2="6" />
+                                <line x1="8" y1="2" x2="8" y2="6" />
+                                <line x1="3" y1="10" x2="21" y2="10" />
+                            </svg>
+                        </div>
+                        
+                        <h3 class="font-display text-base text-carbon font-bold mb-1.5">Guarda la fecha</h3>
+                        <p class="font-sans text-xs text-carbon/75 max-w-xs mx-auto leading-relaxed mb-5">
+                            Haz clic aquí abajo para añadir de forma automática la boda a tu Google Calendar personal.
+                        </p>
+                        
+                        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+de+Camila+%26+Juli%C3%A1n&dates=20261219T223000Z/20261220T060000Z&details=%C2%A1Nuestra+Boda+So%C3%B1ada!+Acomp%C3%B1anos+a+celebrar.+Te+esperamos.&location=Finca+Terra+Oliva%2C+Mendoza" 
+                           target="_blank"
+                           rel="noreferrer"
+                           class="btn-scale-hover w-full inline-flex items-center justify-center bg-white hover:bg-[#FDFBF7] text-rose border border-oro/30 py-3.5 px-4 text-xs font-bold uppercase tracking-[0.15em] rounded-full shadow-sm cursor-pointer">
+                            Agendar en Google Calendar
+                        </a>
+                    </div>
+                </section>
+
+                <!-- Elegant Separator -->
+                <div class="flex items-center justify-center gap-2 py-2">
+                    <span class="h-[1px] w-20 bg-gradient-to-r from-transparent to-oro/30"></span>
+                    <span class="text-oro text-sm">✦ 🕊️ ✦</span>
+                    <span class="h-[1px] w-20 bg-gradient-to-l from-transparent to-oro/30"></span>
+                </div>
+
+                <!-- ==============================================
+                     7. SECCIÓN GALERÍA DE INSTANTES ("NOSOTROS")
+                     ============================================== -->
+                <section>
+                    <div class="text-center mb-6">
+                        <span class="font-sans text-[9px] uppercase tracking-[0.3em] text-oro font-bold block mb-1">NUESTRA HISTORIA EN IMÁGENES</span>
+                        <h2 class="font-display text-2xl font-bold text-carbon">Nuestra Galería</h2>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <!-- Foto 1 -->
+                        <div class="bg-white p-2 border border-oro/15 rounded-[16px] shadow-sm transform rotate-[-1deg] hover:rotate-0 transition-transform">
+                            <div class="aspect-square w-full overflow-hidden rounded-[12px] bg-crema relative">
+                                <!-- EDITAR AQUÍ: ENLACE DE LA FOTO REAL DE LA GALERÍA -->
+                                <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&q=80&w=600" alt="Instante 1" class="absolute inset-0 w-full h-full object-cover rounded-[12px]" referrerpolicy="no-referrer">
+                            </div>
+                            <p class="font-display text-[9px] text-center text-rose mt-2 font-bold italic">Nuestra primera cita</p>
+                        </div>
+
+                        <!-- Foto 2 -->
+                        <div class="bg-white p-2 border border-oro/15 rounded-[16px] shadow-sm transform rotate-[1deg] hover:rotate-0 transition-transform">
+                            <div class="aspect-square w-full overflow-hidden rounded-[12px] bg-crema relative">
+                                <!-- EDITAR AQUÍ: ENLACE DE LA FOTO REAL DE LA GALERÍA -->
+                                <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&q=80&w=600" alt="Instante 2" class="absolute inset-0 w-full h-full object-cover rounded-[12px]" referrerpolicy="no-referrer">
+                            </div>
+                            <p class="font-display text-[9px] text-center text-rose mt-2 font-bold italic">Bajo las estrellas</p>
+                        </div>
+
+                        <!-- Foto 3 -->
+                        <div class="bg-white p-2 border border-oro/15 rounded-[16px] shadow-sm transform rotate-[-1deg] hover:rotate-0 transition-transform">
+                            <div class="aspect-square w-full overflow-hidden rounded-[12px] bg-crema relative">
+                                <!-- EDITAR AQUÍ: ENLACE DE LA FOTO REAL DE LA GALERÍA -->
+                                <img src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&q=80&w=600" alt="Instante 3" class="absolute inset-0 w-full h-full object-cover rounded-[12px]" referrerpolicy="no-referrer">
+                            </div>
+                            <p class="font-display text-[9px] text-center text-rose mt-2 font-bold italic">Risas compartidas</p>
+                        </div>
+
+                        <!-- Foto 4 -->
+                        <div class="bg-white p-2 border border-oro/15 rounded-[16px] shadow-sm transform rotate-[1deg] hover:rotate-0 transition-transform">
+                            <div class="aspect-square w-full overflow-hidden rounded-[12px] bg-crema relative">
+                                <!-- EDITAR AQUÍ: ENLACE DE LA FOTO REAL DE LA GALERÍA -->
+                                <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&q=80&w=600" alt="Instante 4" class="absolute inset-0 w-full h-full object-cover rounded-[12px]" referrerpolicy="no-referrer">
+                            </div>
+                            <p class="font-display text-[9px] text-center text-rose mt-2 font-bold italic">Camino al altar</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Elegant Separator -->
+                <div class="flex items-center justify-center gap-2 py-2">
+                    <span class="h-[1px] w-20 bg-gradient-to-r from-transparent to-oro/30"></span>
+                    <span class="text-oro text-sm">✦ 🕊️ ✦</span>
+                    <span class="h-[1px] w-20 bg-gradient-to-l from-transparent to-oro/30"></span>
+                </div>
+
+                <!-- ==============================================
+                     8. SECCIÓN MESA DE REGALOS (REVEAL UX)
+                     ============================================== -->
+                <section>
+                    <div class="bg-crema border border-oro/15 rounded-[16px] p-6 text-center shadow-sm relative overflow-hidden">
+                        <div class="w-12 h-12 rounded-full border border-oro/30 bg-white flex items-center justify-center mb-4 text-rose mx-auto shadow-sm">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.3" viewBox="0 0 24 24">
+                                <rect x="2" y="5" width="20" height="14" rx="2" />
+                                <line x1="2" y1="10" x2="22" y2="10" />
+                            </svg>
+                        </div>
+
+                        <h3 class="font-display text-lg font-bold text-carbon mb-1">Mesa de Regalos</h3>
+                        <p class="font-sans text-xs text-carbon/70 max-w-xs mx-auto leading-relaxed mb-5">
+                            El mejor regalo es tu compañía, pero si deseas realizar un obsequio, ponemos a tu disposición nuestros datos bancarios para transferencia.
+                        </p>
+
+                        <!-- Clean Alias visible initially -->
+                        <div class="inline-block bg-white border border-[#D4AF37]/25 rounded-full py-2 px-6 my-2 shadow-sm">
+                            <span class="font-sans text-xs text-carbon/80">Alias: </span>
+                            <span class="font-sans text-xs font-bold text-rose">rose.y.brisa</span>
+                        </div>
+
+                        <!-- Accordion text trigger with underline on hover -->
+                        <div class="mt-4">
+                            <button type="button" id="toggle-details-btn" class="text-xs font-bold uppercase tracking-wider text-rose hover:underline inline-flex items-center gap-1.5 focus:outline-none cursor-pointer transition-all">
+                                <span>Desplegar información para transferencias</span>
+                                <svg id="toggle-chevron" class="w-3.5 h-3.5 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m6 9 6 6 6-6"/>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <!-- Drawer Panel (Collapsible content) -->
+                        <div id="bank-details-panel" class="hidden mt-6 text-left bg-white border border-oro/15 rounded-xl p-4 space-y-4 shadow-inner transition-all">
+                            <div>
+                                <span class="block text-[9px] uppercase tracking-wider text-rose font-bold">Titular del CBU</span>
+                                <span class="block text-xs font-sans font-bold text-carbon mt-0.5">Julián Marcos</span>
+                            </div>
+
+                            <div class="border-t border-oro/10 pt-3">
+                                <span class="block text-[9px] uppercase tracking-wider text-rose font-bold">Banco Emisor</span>
+                                <span class="block text-xs font-sans font-semibold text-carbon mt-0.5">Banco de Galicia</span>
+                            </div>
+
+                            <div class="border-t border-oro/10 pt-3 flex items-center justify-between">
+                                <div class="flex-1 mr-2">
+                                    <span class="block text-[9px] uppercase tracking-wider text-rose font-bold">CBU</span>
+                                    <span class="block text-[11px] font-mono font-medium text-carbon mt-1 select-all break-all">
+                                        0070012354896321457896
+                                    </span>
+                                </div>
+                                <div class="relative flex items-center">
+                                    <button type="button" onclick="copyValue('0070012354896321457896', 'cbu')" class="p-2 bg-[#F7F4EE] hover:bg-oro/10 border border-oro/15 rounded-lg transition-all cursor-pointer">
+                                        <svg class="w-3.5 h-3.5 text-rose" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                             <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                             <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                        </svg>
+                                    </button>
+                                    <span id="toast-cbu" class="hidden absolute bottom-10 right-0 bg-rose text-white text-[9px] py-1 px-2 rounded-md shadow-md">
+                                        ¡Copiado!
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="border-t border-oro/10 pt-3 flex items-center justify-between">
+                                <div>
+                                    <span class="block text-[9px] uppercase tracking-wider text-rose font-bold">Alias de transferencia</span>
+                                    <span class="block text-xs font-sans font-bold text-rose mt-0.5 select-all">
+                                        rose.y.brisa
+                                    </span>
+                                </div>
+                                <div class="relative flex items-center">
+                                    <button type="button" onclick="copyValue('rose.y.brisa', 'alias')" class="p-2 bg-[#F7F4EE] hover:bg-oro/10 border border-oro/15 rounded-lg transition-all cursor-pointer">
+                                        <svg class="w-3.5 h-3.5 text-rose" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                             <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                             <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                        </svg>
+                                    </button>
+                                    <span id="toast-alias" class="hidden absolute bottom-10 right-0 bg-rose text-white text-[9px] py-1 px-2 rounded-md shadow-md">
+                                        ¡Copiado!
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Elegant Separator -->
+                <div class="flex items-center justify-center gap-2 py-2">
+                    <span class="h-[1px] w-20 bg-gradient-to-r from-transparent to-oro/30"></span>
+                    <span class="text-oro text-sm">✦ 🕊️ ✦</span>
+                    <span class="h-[1px] w-20 bg-gradient-to-l from-transparent to-oro/30"></span>
+                </div>
+
+                <!-- ==============================================
+                     9. SECCIÓN SOUNDTRACK DE LA NOCHE
+                     ============================================== -->
+                <section>
+                    <div class="bg-crema border border-oro/15 rounded-[16px] p-6 text-center shadow-sm">
+                        <div class="w-12 h-12 rounded-full border border-oro/30 bg-white flex items-center justify-center mb-4 text-rose mx-auto shadow-sm">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.3" viewBox="0 0 24 24">
+                                <path d="M9 18V5l12-2v13" />
+                                <circle cx="6" cy="18" r="3" />
+                                <circle cx="18" cy="16" r="3" />
+                            </svg>
+                        </div>
+
+                        <h3 class="font-display text-lg font-bold text-carbon mb-1">Playlist de la Noche</h3>
+                        <p class="font-sans text-xs text-carbon/70 max-w-xs mx-auto leading-relaxed mb-6">
+                            Súmate a la banda sonora oficial de la boda. Escucha nuestra playlist y propón los hits que harán que la pista se encienda.
+                        </p>
+
+                        <!-- Spotify embed with playlist theme=0, height=152 -->
+                        <div class="overflow-hidden rounded-xl border border-oro/15 shadow-inner bg-white p-1 mb-5">
+                            <iframe
+                              src="https://open.spotify.com/embed/playlist/37i9dQZF1DX10zKzsJ2jva?utm_source=generator&theme=0"
+                              width="100%"
+                              height="152"
+                              frameBorder="0"
+                              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                              loading="lazy"
+                              style="border-radius: 12px;"
+                              referrerpolicy="no-referrer"
+                            ></iframe>
+                        </div>
+
+                        <!-- Elegant suggested hit button with spacing and subtle borders -->
+                        <button type="button" onclick="suggestHit()" class="btn-scale-hover w-full inline-flex items-center justify-center bg-white hover:bg-rose/5 text-rose border border-rose/35 py-3.5 px-4 text-[10px] font-bold uppercase tracking-[0.2em] rounded-full cursor-pointer transition-all">
+                            ⚡ SUGERIR UN HIT
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Elegant Separator -->
+                <div class="flex items-center justify-center gap-2 py-2">
+                    <span class="h-[1px] w-20 bg-gradient-to-r from-transparent to-oro/30"></span>
+                    <span class="text-oro text-sm">✦ 🕊️ ✦</span>
+                    <span class="h-[1px] w-20 bg-gradient-to-l from-transparent to-oro/30"></span>
+                </div>
+
+                <!-- ==============================================
+                     10. SECCIÓN RSVP (CONFIRMACIÓN DE ASISTENCIA)
+                     ============================================== -->
+                <section>
+                    <div class="bg-white border border-oro/20 rounded-[16px] py-8 px-6 text-center shadow-md relative overflow-hidden">
+                        <span class="font-sans text-[10px] uppercase tracking-[0.3em] text-rose font-bold block mb-1">ASISTENCIA</span>
+                        <h2 class="font-display text-2xl font-bold text-carbon mb-6">Confirmar Asistencia</h2>
+                        
+                        <form id="rsvp-form" class="space-y-5 text-left">
+                            <!-- Nombre -->
+                            <div class="flex flex-col">
+                                <label class="font-sans text-[11px] uppercase tracking-wider text-carbon/80 mb-2 font-bold" for="rsvp-name">
+                                    Nombre Completo
+                                </label>
+                                <input 
+                                    type="text" 
+                                    id="rsvp-name" 
+                                    class="border border-oro/30 rounded-xl py-3 px-4 bg-crema/40 font-sans text-sm text-carbon focus:outline-none focus:border-rose focus:bg-white placeholder-carbon/40 transition-all duration-200" 
+                                    placeholder="Ej. Juana Pérez" 
+                                    required
+                                >
+                            </div>
+
+                            <!-- Asistencia choices (Sturdy CSS Custom Radios) -->
+                            <div class="flex flex-col">
+                                <label class="font-sans text-[11px] uppercase tracking-wider text-carbon/80 mb-2.5 font-bold">
+                                    ¿Nos acompañarás en este día de ensueño?
+                                </label>
+                                <div class="grid grid-cols-2 gap-3">
+                                    <label class="relative flex items-center justify-center py-3.5 px-3 rounded-xl border border-oro/30 bg-crema/40 text-carbon cursor-pointer hover:bg-oro/5 transition-all text-center">
+                                        <input type="radio" name="attendance" value="Confirmado" class="sr-only peer" checked required>
+                                        <span class="font-sans text-xs uppercase tracking-wider font-bold peer-checked:text-rose absolute inset-0 flex items-center justify-center rounded-xl border-2 border-transparent peer-checked:border-rose peer-checked:bg-crema/60 transition-all">
+                                            Sí, Confirmo
+                                        </span>
+                                        <span class="text-xs uppercase tracking-wider font-bold opacity-0">Sí, Confirmo</span>
+                                    </label>
+                                    <label class="relative flex items-center justify-center py-3.5 px-3 rounded-xl border border-oro/30 bg-crema/40 text-carbon cursor-pointer hover:bg-oro/5 transition-all text-center">
+                                        <input type="radio" name="attendance" value="No podré asistir" class="sr-only peer" required>
+                                        <span class="font-sans text-xs uppercase tracking-wider font-bold peer-checked:text-rose absolute inset-0 flex items-center justify-center rounded-xl border-2 border-transparent peer-checked:border-rose peer-checked:bg-crema/60 transition-all">
+                                            No podré ir
+                                        </span>
+                                        <span class="text-xs uppercase tracking-wider font-bold opacity-0">No podré ir</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Restricción/Dieta -->
+                            <div class="flex flex-col">
+                                <label class="font-sans text-[11px] uppercase tracking-wider text-carbon/80 mb-2 font-bold" for="rsvp-diet">
+                                    Restricción Alimentaria / Tipo de Menú
+                                </label>
+                                <div class="relative">
+                                    <select 
+                                        id="rsvp-diet" 
+                                        class="w-full border border-oro/30 rounded-xl py-3 px-4 bg-crema/40 font-sans text-sm text-carbon focus:outline-none focus:border-rose focus:bg-white cursor-pointer appearance-none transition-all"
+                                    >
+                                        <option value="Ninguna (Menú Tradicional)">Ninguna (Menú Tradicional)</option>
+                                        <option value="Vegetariano">Menú Vegetariano</option>
+                                        <option value="Vegano">Menú Vegano</option>
+                                        <option value="Sin TACC (Celíaco)">Menú Sin T.A.C.C. (Celiaquía)</option>
+                                    </select>
+                                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3.5 text-rose">
+                                        <svg class="fill-current h-4 w-4" viewBox="0 0 20 20">
+                                            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Botón de Envío -->
+                            <div class="pt-4">
+                                <button 
+                                    type="submit" 
+                                    class="w-full bg-rose hover:bg-[#8D344E] text-white py-4 px-4 text-[10px] font-bold uppercase tracking-[0.2em] flex items-center justify-center gap-2 transition-all rounded-full shadow-md cursor-pointer"
+                                >
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <line x1="22" y1="2" x2="11" y2="13" />
+                                        <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                                    </svg>
+                                    Confirmar Asistencia
+                                </button>
+                            </div>
+                        </form>
+
+                        <p class="font-sans text-[10px] font-light italic text-carbon/60 mt-6 block">
+                            Por favor, confírmanos antes del 20 de Noviembre. ¡Muchas gracias!
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Minimalist signature Footer -->
+                <footer class="text-center pt-8 pb-4">
+                    <div class="h-1.5 w-1.5 bg-oro rounded-full mx-auto mb-4"></div>
+                    <p class="font-serif-title text-xl tracking-[0.05em] text-carbon font-semibold">Camila & Julián</p>
+                    <p class="font-sans text-[8px] uppercase tracking-[0.4em] text-rose font-bold mt-2">AURA INVITACIONES • ROSÉ & BRISA</p>
+                </footer>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Interactive script logics -->
+    <script>
+        // --- 1. SYSTEM LOADER HIDE ON window.onload ---
+        window.addEventListener('load', function() {
+            const loader = document.getElementById('loader');
+            if (loader) {
+                loader.classList.add('opacity-0');
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                }, 700);
+            }
+        });
+
+        // --- 2. COUNTDOWN TIMER SYSTEM ---
+        // Target: December 19, 2026 @ 19:30 hs
+        const targetDate = new Date("2026-12-19T19:30:00").getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance < 0) {
+                document.getElementById("days-val").textContent = "00";
+                document.getElementById("hours-val").textContent = "00";
+                document.getElementById("mins-val").textContent = "00";
+                document.getElementById("secs-val").textContent = "00";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days-val").textContent = String(days).padStart(2, "0");
+            document.getElementById("hours-val").textContent = String(hours).padStart(2, "0");
+            document.getElementById("mins-val").textContent = String(minutes).padStart(2, "0");
+            document.getElementById("secs-val").textContent = String(seconds).padStart(2, "0");
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // --- 3. MESA DE REGALOS DISPLAY SYSTEM ---
+        const toggleBtn = document.getElementById("toggle-details-btn");
+        if (toggleBtn) {
+            toggleBtn.addEventListener("click", function () {
+                const panel = document.getElementById("bank-details-panel");
+                const chevron = document.getElementById("toggle-chevron");
+                if (panel) {
+                    if (panel.classList.contains("hidden")) {
+                        panel.classList.remove("hidden");
+                        if (chevron) chevron.style.transform = "rotate(180deg)";
+                    } else {
+                        panel.classList.add("hidden");
+                        if (chevron) chevron.style.transform = "rotate(0deg)";
+                    }
+                }
+            });
+        }
+
+        // Copy Clipboard helper with toast popup
+        function copyValue(value, type) {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(value).then(() => {
+                    showToast(type);
+                }).catch(err => {
+                    fallbackCopy(value, type);
+                });
+            } else {
+                fallbackCopy(value, type);
+            }
+        }
+
+        function fallbackCopy(value, type) {
+            const textArea = document.createElement("textarea");
+            textArea.value = value;
+            textArea.style.position = "fixed";
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                showToast(type);
+            } catch (err) {
+                console.error('Fallback failed', err);
+            }
+            document.body.removeChild(textArea);
+        }
+
+        function showToast(type) {
+            const toast = document.getElementById("toast-" + type);
+            if (toast) {
+                toast.classList.remove("hidden");
+                setTimeout(() => {
+                    toast.classList.add("hidden");
+                }, 1800);
+            }
+        }
+
+        // --- 4. SUGGEST A SONG SYSTEM ---
+        function suggestHit() {
+            const song = prompt("¿Qué canción quieres sugerir para hacer que todos bailen?");
+            if (song && song.trim() !== "") {
+                const text = encodeURIComponent(`¡Hola! Quisiera sugerir el siguiente temazo para bailar en la fiesta: "${song}"`);
+                window.open(`https://wa.me/5492617232002?text=${text}`, '_blank');
+            }
+        }
+
+        // --- 5. RSVP FORM CONTROLLER ---
+        const rsvpForm = document.getElementById("rsvp-form");
+        if (rsvpForm) {
+            rsvpForm.addEventListener("submit", function (e) {
+                e.preventDefault();
+                const name = document.getElementById("rsvp-name").value;
+                const attendance = document.querySelector('input[name="attendance"]:checked').value;
+                const diet = document.getElementById("rsvp-diet").value;
+
+                // Build WhatsApp sweet message
+                const message = `¡Hola! Confirmo mi asistencia para la Boda de Camila & Julián ✨\n\n*Nombre Completo:* ${name}\n*Asistencia:* ${attendance}\n*Menú / Restricción:* ${diet}\n\n¡Qué emoción compartir este gran día!`;
+                const encoded = encodeURIComponent(message);
+                window.open(`https://wa.me/5492617232002?text=${encoded}`, '_blank');
+            });
+        }
+    </script>
+</body>
+</html>
